@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var specialCharacter = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+var specialCharacter = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", " < ", "=", " > ", " ? ", "@", "[", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 var number = ["0","1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -19,18 +19,19 @@ selectSpecialCharacter=true;
 function writePassword() {
   var characters = window.prompt("How many characters would you like your password to be? Chose between 8-128.");
   if (characters === null) {
-    alert("You must enter a number between 8 and 128");
+    alert("You must enter a number between 8 and 128. Refresh page to try again.");
     return false;
 } else if (characters < 8 || characters > 128) {
-    window.confirm("You must enter a number between 8 and 128")
+    window.confirm("You must enter a number between 8 and 128. Refresh page to try again.")
     return false;
   }
   else if (isNaN(characters)) {
-  window.confirm("You must enter a number between 8 and 128")
+  window.confirm("You must enter a number between 8 and 128. Refresh page to try again.")
   return false;
   }
   
   characters=parseInt(characters)
+  alert("You selected "+ characters + " characters.")
 
   var selectLowerCase = window.confirm("Will there be lowercase leters?");
   var selectUpperCase = window.confirm("Will there be uppercase letters");
@@ -40,22 +41,38 @@ function writePassword() {
   
   if (selectLowerCase === true) {
     charactersArray.push(...lowerCase);
-  }
+    alert("You have confirmed lower case letters.");  }
+    else {
+      alert("You said no to lower case letters.")
+    }
+
 
   if (selectUpperCase === true) {
     charactersArray.push(...upperCase);
+    alert("You have confirmed upper case letters.")
+  }
+  else {
+    alert("You said no to upper case letters.")
   }
 
   if (selectNumber === true) {
     charactersArray.push(...number);
+    alert("You have confirmed numbers.")
+  }
+  else {
+    alert("You said no to numbers.")
   }
 
   if (selectSpecialCharacter === true) {
     charactersArray.push(...specialCharacter);
+    alert("You have confirmed special characters.")
+  }
+  else {
+    alert("You said no to special characters.")
   }
 
   if (selectLowerCase === false && selectUpperCase === false && selectNumber === false && selectSpecialCharacter === false){
-    window.confirm("You must select critera!")
+    window.confirm("You must select at least one critera. Refresh page to try again.")
     return false;
   }
 
