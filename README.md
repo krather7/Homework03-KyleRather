@@ -21,3 +21,4 @@ Special Characters<br>
 Kyle Rather<br>
 
  --#SCREENSHOT--<br>
+![alt tag](https://github.com/krather7/BootcampHomework02/blob/main/Homework03 Screenshot.png)
