@@ -116,9 +116,8 @@ function writePassword() {
   }
 
   password = password.join("");
-  alert("Your generated password is: " +password);
-alert("Congratulations!");
-location.reload();
+  document.getElementById('password').innerHTML = password;
+  alert("Congratulations! Refresh page to generate a new password.")
 
 
   //--------------------------------------------------------------------------
