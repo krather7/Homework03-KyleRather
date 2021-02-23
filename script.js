@@ -35,6 +35,7 @@ var characters=0;
 var passwordLetter="";
 
 
+
 //--------------------------------------------------------------------------
 //Setting Criteria Variables
 //--------------------------------------------------------------------------
@@ -49,7 +50,7 @@ var selectSpecialCharacter=true;
 function writePassword() {
   var characters = window.prompt("How many characters would you like your password to be? Chose between 8-128.");
   if (characters === null) {
-    alert("You must enter a number between 8 and 128. Refresh page to try again.");
+    alert("You must enter a number between 8 and 128.");
     return false;
 } else if (characters < 8 || characters > 128) {
     window.confirm("You must enter a number between 8 and 128.")
@@ -116,7 +117,7 @@ function writePassword() {
 
   password = password.join("");
   alert("Your generated password is: " +password);
- alert("Congratulations!");
+alert("Congratulations!");
 location.reload();
 
 
